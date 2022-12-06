@@ -1,0 +1,227 @@
+@import '../../assets/styles/colors.scss';
+@import '../../assets/styles/templates.scss';
+@import '../../assets/styles/mixins.scss';
+
+
+.currentMovie__container {
+    .currentMovie__content {
+        @extend %contentMovie;
+        align-items: baseline;
+        width: 1100px;
+        .currentMovie__mainInfo {       
+            .currentMovie__title {
+                font-size: 2rem;
+                max-width: 500px;
+                overflow: hidden;
+            }
+            .currentMovie__img {
+                width: 500px;
+                margin-top: 2rem;
+                & img {
+                    @extend %fullSize;
+                }
+            }
+        }
+        .currentMovie__details {
+            margin-left: 4rem;
+            .currentMovie__detailsHeader {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            .currentMovie__detailsInfo {
+                display: flex;
+                line-height: 3rem;
+                max-width: 504px;
+                overflow: hidden;
+                .currentMovie__detailsTitle {
+                    width: 160px;
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                }
+                .currentMovie__genres {
+                    .currentMovie__genre {
+                        @extend %genre;
+                        line-height: 2rem;
+                    }
+                }
+            }
+            .currentMovie__overview {
+                margin-top: 2rem;
+                .currentMovie__overviewTitle {
+                    font-size: 1.5rem;
+                }
+                .currentMovie__overviewText {
+                    margin-top: 1rem;
+                    line-height: 24px;
+                }
+            }
+            .currentMovie__favBtn {
+                @extend %detailButton;
+                padding: 10px;
+            }
+            .currentMovie__added {
+                @include contentPosition();
+                @extend %detailButton;
+                width: 50px;
+                height: 50px;
+                .currentMovie__addedIcon {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1211px) {
+    .currentMovie__container {
+        .currentMovie__content {
+            width: 900px;
+            .currentMovie__mainInfo {     
+                .currentMovie__title {
+                    max-width: 400px;
+                }  
+                .currentMovie__img {
+                    width: 400px;
+                }
+            }
+            .currentMovie__details {
+                .currentMovie__detailsInfo {
+                    .currentMovie__genres {
+                        display: flex;
+                        flex-wrap: nowrap;
+                        max-width: 285px;
+                        overflow: hidden;
+                        .currentMovie__genre {
+                            padding: 0 5px;
+                            white-space: nowrap;
+                            line-height: 3rem;
+                        }
+                    }
+                    .currentMovie__detailsTitle {
+                        max-width: 100px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .currentMovie__container {
+        .currentMovie__content {
+            width: 800px;
+            .currentMovie__mainInfo {       
+                max-width: 380px;
+                .currentMovie__title {
+                    font-size: 1.5rem;
+                    max-width: 350px;
+                }
+                .currentMovie__img {
+                    width: 350px;
+                }
+            }
+            .currentMovie__details {
+                margin-left: 2rem;
+
+                .currentMovie__detailsInfo {
+                    .currentMovie__detailsTitle {
+                        font-size: 1.1rem;
+                        font-weight: bold;
+                    }
+                    .currentMovie__genres {
+                        max-width: 250px;
+                        overflow: hidden;
+                        .currentMovie__genre {
+                            font-size: 0.8rem;
+                        }
+                    }
+                }                    
+            }  
+        }
+    }
+}
+
+@media screen and (max-width: 891px) {
+    .currentMovie__container {
+        .currentMovie__content {
+            display: block;
+            width: 490px;
+            margin: auto;
+            .currentMovie__mainInfo {       
+                .currentMovie__title {
+                    font-size: 2rem;
+                }
+                .currentMovie__img {
+                    img {
+                        width: 450px;
+                    }
+                     
+                }
+            }
+            .currentMovie__details {
+                margin: 2rem 0 0;
+                .currentMovie__detailsInfo {
+                    .currentMovie__detailsTitle {
+                        width: 130px;
+                    }
+                }                    
+            }  
+        }
+    }
+}
+
+@media screen and (max-width: 581px) {
+    .currentMovie__container {
+        .currentMovie__content {
+            width: 380px;
+            .currentMovie__mainInfo {       
+                .currentMovie__img {
+                    img {
+                        width: 340px;
+                        height: 460px;
+                    }
+                     
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 441px) {
+    .currentMovie__container {
+        .currentMovie__content {
+            width: 330px;
+            .currentMovie__mainInfo {   
+                .currentMovie__title {
+                    font-size: 1.5rem;
+                }    
+                .currentMovie__img {
+                    img {
+                        width: 290px;
+                        height: 410px;
+                    }
+                }
+            }
+            .currentMovie__details .currentMovie__detailsInfo {
+                .currentMovie__detailsTitle {
+                    font-size: 0.8rem;
+                }
+                .detailsBody {
+                    font-size: 0.7rem !important;
+                }
+                .currentMovie__genres {
+                    max-width: 172px;
+                    overflow: hidden;
+                    .currentMovie__genre {
+                        display: flex;
+                        padding: 0;
+                        border: none;
+                    }
+                }
+            }   
+        }
+    }
+}

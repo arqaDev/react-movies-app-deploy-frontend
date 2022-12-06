@@ -1,0 +1,171 @@
+@import '../../assets/styles/colors.scss';
+@import '../../assets/styles/mixins.scss';
+
+
+.navbar {
+    @include contentPosition($justifyContent: space-between);
+    .navbar__openMenu {
+        display: none;
+        .navbar__menuIcon {
+            font-size: 3rem;
+        }
+    }
+    .navbar__link {
+        color: $secondary-color;
+        @include contentPosition();
+        .navbar__logo {
+            font-size: 3rem;
+        }
+        .navbar__title {
+            font-size: 2.3rem;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+    }
+    .navbar__icons {
+        display: flex;
+        .navbar__icon {
+            margin-left: 20px;
+            position: relative;
+            .navbar__quantity {
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                padding: 0 7px;
+                background-color: $red-color;
+                border-radius: 50%;
+            }
+            .navbar__wishlist,
+            .navbar__logout {
+                color: $secondary-color;
+                cursor: pointer;
+                font-size: 2.5rem;
+            }
+        }
+    }
+    button {
+        padding: 10px;
+        font-weight: 600;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        margin-left: 20px;
+    }
+    .navbar__login {
+        @include navbarButton(transparent, $green-color);
+    }
+    .navbar__registration {
+        @include navbarButton($blue-color, $blue-hover-color)
+    }
+}
+.navbar.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1% 5%;
+    background-color: $primary-color;
+    z-index: 10000;
+}
+
+@media screen and (max-width: 1281px) {
+    .navbar {
+        .navbar__link .navbar__title,
+        .navbar__link .navbar__logo,
+        .navbar__icons .navbar__icon .navbar__wishlist,
+        .navbar__icons .navbar__icon .navbar__logout
+        {
+            font-size: 3rem;
+        }
+    }
+}
+
+@media screen and (max-width: 701px) {
+    .navbar {   
+        .navbar__openMenu {
+            display: block;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            border: none;
+            color: $secondary-color;
+        }
+        .navbar__icons, .navbar__registration, .navbar__login {
+            display: none;
+        }
+        .navbar__link .navbar__title,
+        .navbar__link .navbar__logo
+        {
+            font-size: 2.3rem;
+        }
+        .navbar__toggleMenu,
+        .navbar__toggleBtns
+        {
+            @include sidePosition(fixed, 0, 0, $left: 0);
+            padding-top: 3rem;
+            width: 100%;
+            background-color: $secondary-color;
+            transition: .2s ease-in;
+            z-index: 1000;
+            .toggleIcon {
+                @include contentPosition($justifyContent: flex-start);
+                width: 100%;
+                margin: 0;
+                padding: 1rem 2rem;
+                color: $primary-color;
+                font-weight: bold;
+                font-size: 1.5rem;
+                border: none;
+                border-radius: 0;
+                background-color: transparent;
+                &:active {
+                    background-color: $grey-hover-color;
+                }
+            }
+        }
+        .navbar__closeMenu {
+            display: block;
+            @include sidePosition(fixed, 10px, 10px);
+            color: $primary-color;
+            border: none;
+            background-color: transparent;
+            z-index: 1000;
+        }
+    }
+}
+
+@media (max-width: 401px) {
+    .navbar {
+        .navbar__link .navbar__title,
+        .navbar__link .navbar__logo
+        {
+            font-size: 1.9rem;
+        }
+        .navbar__openMenu .navbar__menuIcon {
+            font-size: 2.5rem;
+        }
+        .navbar__toggleMenu .toggleIcon,
+        .navbar__toggleBtns .toggleIcon
+        {
+            font-size: 1.2rem;
+        }
+    } 
+}
+
+@media (max-width: 401px) {
+    .navbar {
+        .navbar__link .navbar__title,
+        .navbar__link .navbar__logo
+        {
+            font-size: 1.9rem;
+        }
+        .navbar__openMenu .navbar__menuIcon {
+            font-size: 2.5rem;
+        }
+        .navbar__toggleMenu .toggleIcon,
+        .navbar__toggleBtns .toggleIcon
+        {
+            font-size: 1.2rem;
+        }
+    } 
+}
+

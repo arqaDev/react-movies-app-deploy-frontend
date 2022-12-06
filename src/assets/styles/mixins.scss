@@ -1,0 +1,47 @@
+@mixin rating($marginTop) {
+    margin-top: $marginTop;
+    padding: 10px;
+    background-color: rgba($primary-color, .55);
+    width: 50px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+@mixin button($fontSize, $backgroundColor, $color, $hoverBgc, $borderRadius: 0, $border: none, $fontWeight: bold, $marginTop: 0, $padding: 0) {
+    padding: $padding;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    background-color: $backgroundColor;
+    color: $color;
+    border: $border;
+    border-radius: $borderRadius;
+    margin-top: $marginTop;
+
+    &:hover {
+        background-color: $hoverBgc;
+    }
+}
+
+@mixin contentPosition($display: flex, $alignItems: center, $justifyContent: center) {
+    display: $display;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+}
+
+@mixin navbarButton($bgc, $hoverBgc) {
+    background-color: $bgc;
+    border: 2px solid $secondary-color;
+    color: $secondary-color;
+    transition: 0.2s ease-out;
+    &:hover {
+        background-color: $hoverBgc;
+    }
+}
+
+@mixin sidePosition ($position: absolute, $top: none, $right: none, $bottom: none, $left: none) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}

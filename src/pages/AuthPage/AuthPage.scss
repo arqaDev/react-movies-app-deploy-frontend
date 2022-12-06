@@ -1,0 +1,89 @@
+@import '../../assets/styles/colors.scss';
+@import '../../assets/styles/mixins.scss';
+
+
+.auth__container {
+    @include contentPosition();
+    .auth__content {
+        background-color: rgba($secondary-color, .9);
+        padding: 40px 80px;
+        border-radius: 5px;
+        .auth__title {
+            font-size: 2rem;
+            color: $primary-color;
+        }
+        .auth__form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            .auth__email, .auth__password {
+                margin: 12px 0;
+                width: 350px;
+            }
+            .auth__validation {
+                margin: 1rem 0;
+                .auth__validationItem {
+                    align-items: center;
+                    color: $primary-color;
+                }
+            }
+            .auth__btns {
+                @include contentPosition($justifyContent: space-between);
+                width: 100%;
+                margin-top: 15px;
+                .auth__accountMessage {
+                    white-space: wrap;
+                    margin-left: 1rem;
+                    color: #000;
+                    .auth__registrationLink {
+                        color: $blue-color;
+                    }
+                }
+                .auth__btn {
+                    @include button (1.2rem, $blue-color, $secondary-color, $blue-hover-color, $borderRadius: 3px, $padding: 10px 25px);
+                }
+            } 
+        }
+    }
+}
+
+@media screen and (max-width: 621px) {
+    .auth__container .auth__content {
+        padding: 40px;
+        .auth__form {
+            .auth__email,
+            .auth__password
+            {
+                width: 280px;
+            }
+            .auth__btns{
+                .auth__accountMessage {
+                    font-size: 0.7rem;
+                    .auth__registrationLink {
+                        font-size: 0.7rem;
+                    }
+                }
+            }
+        }    
+    }
+}
+
+@media screen and (max-width: 451px) {
+    .auth__container .auth__content {
+        .auth__title {
+            font-size: 1.5rem;
+        }
+        .auth__form {
+            .auth__email,
+            .auth__password
+            {
+                width: 240px;
+                margin: 7px 0;
+            }
+            .auth__btns .auth__btn {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+        }    
+    }
+}
