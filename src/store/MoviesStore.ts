@@ -26,14 +26,14 @@ export default class MoviesStore{
     }
 
     get LS(): number | never {
-        try {
+        // try {
             const jwt = localStorage.getItem('token')
             const decodedToken: any = jwt_decode(jwt!)
             const wishlistId = decodedToken.id
             return wishlistId
-        } catch (e) {
-            throw Error('you are not logged in')
-        }    
+        // } catch (e) {
+        //     throw Error('you are not logged in')
+        // }    
     }
 
     get wishlistMovies(): IMovieDetails[] {
