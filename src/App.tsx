@@ -13,6 +13,7 @@ const App = observer(() => {
 
   // check token
   useEffect(() => {
+    console.log(check())
     check().then((data) => {
       user.setUser(true)
       user.setAuth(true)
